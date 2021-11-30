@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap');
+
+*
+{
+  box-sizing: border-box;
+  font-family: "Josefin", sans-serif;
+}
+body
+{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #000;
+  font-family: "Josefin", sans-serif;
+}
+.wrapper
+{
+  position: relative;
+  width: 60%;
+  height: 100%;
+  display: grid;
+  grid-template-colums: repeat (auto-fill, minmax(280px,1fr));
+  grid-template-rows: auto;
+  grid-gap: 0 70px;
+  justify-content: space-around;
+  align-items: center;
+}
+.wrapper .box
+{
+  width: 320px;
+  height: 450px;
+  top: -10px;
+  bottom: 0;
+  background: #000;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: 5px solid #00ff00;
+}
+.wrapper .box h2
+{
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  margin: 0;
+  padding: 0;
+  line-spacing: 1.5px;
+  font-size: 8em;
+  color: #a9a9a9;
+  transition: 0.45s;
+  opacity: 2;
+}
+.wrapper .box:before
+{
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #fff;
+  transform: skew(2deg, 2deg);
+  z-index: -1;
+}
+.wrapper .box:nth-child(1):before
+{
+  background: linear-gradient(315deg, #ff0057, #e64a19);
+}
+.wrapper .box:nth-child(2):before
+{
+  background: linear-gradient(315deg, #ff0057, #e64a19);
+}
+.wrapper .box:nth-child(3):before
+{
+  background: linear-gradient(315deg, #ff0057, #e64a19);
+}
+.wrapper .box:after
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+.box:hover
+{
+  transform: translateY(20px);
+}
+.box:hover .content h2
+{
+  top: -140px;
+  opacity: 2;
+}
+.box .content h3
+{
+  margin: 0 0 10px;
+  padding: 0;
+  font-weight: bold;
+  font-size: 32px;
+  font-weight: 500;
+  color: #00ffff;
+}
+.box:before
+{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
+}
+.box:hover:before
+{
+  opacity: 0;
+}
+.content
+{
+  position: relative;
+  padding: 20px;
+  color: #fff;
+  transform: translateY(-10px);
+}
+.box .content p
+{
+  letter-spacing: 1px;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+}
+.box .content button
+{
+  position: relative;
+  margin: 20px 0 0;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  background: #fff;
+  font-weight: bold;
+  color: #808080;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: 1.5s ease-in-out;
+  visibility: hidden;
+}
+.box .content button:hover
+{
+  transform: translateY(0);
+  opacity: 0;
+  visibility: visible;
+}
+
+.box .content button:hover
+{
+  color: #808080;
+  text-color: #fff;
+}
+.btn
+{
+  width: 150px;
+  height: 40px;
+  background: transparent;
+  position: relative;
+}
+.btn button
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 1.1em;
+  background: transparent;
+  border: 1.5px solid #333;
+  color: #333;
+  cursor: pointer;
+  transition: all 4s;
+  z-index: 3;
+}
+.btn:hover button
+{
+  color: transparent;
+  text-color: #fff;
+  border: none;
+  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+}
+.bg, .bg-gradient
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  text-color: #fff;
+  z-index: 2;
+  transform: scale(1.05, 1.2);
+}
+.bg-gradient
+{
+  z-index: 1;
+  transform: scale(0.2, 1.4);
+  transition: all 4s;
+}
+.btn:hover .bg-gradient
+{
+  transform: scale(1.1, 1.4);
+   background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+}
